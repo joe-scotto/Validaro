@@ -21,5 +21,32 @@ $data = array(
 )
 ```
 
+After defining what you wish to validate you can then use one of the built in functions to check what you wish.
+```php
+if (Validaro::checkNotEmpty($data)) {
+    //Do Something
+}
+```
+
+##Functions
+All functions will return either a true or false value allowing you to use them in a conditional statement.  
+
+```php
+if (Validaro::checkNotEmpty($data)) {
+    //Do something
+}
+```
+Checks that all fields are not empty.
+```php 
+Validaro::checkNotEmpty
+```
+Checks that all fields match your supplied "maxLength" value.
+```php
+Validaro::checkMaxLength
+```
+Checks that all fields match your supplied "minLength" value.
+```php
+Validaro::checkMinLength
+```
 ## License
 MIT
