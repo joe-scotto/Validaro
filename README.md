@@ -38,15 +38,15 @@ if (Validaro::checkNotEmpty($data)) {
 ```
 Checks that all fields are not empty.
 ```php 
-Validaro::checkNotEmpty
+Validaro::checkNotEmpty();
 ```
 Checks that all fields match your supplied "maxLength" value.
 ```php
-Validaro::checkMaxLength
+Validaro::checkMaxLength();
 ```
 Checks that all fields match your supplied "minLength" value.
 ```php
-Validaro::checkMinLength
+Validaro::checkMinLength();
 ```
 ## License
 MIT
