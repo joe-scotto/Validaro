@@ -7,29 +7,15 @@ class Validaro {
      * @return bool True if all fields are not empty, false if not
      */
     public static function checkNotEmpty ($variables) {
-        //Variables
-        $counter = 0;
-        $validation = array();
-
         //Loop through values, return false if one is empty, true if not
-        foreach ($variables as $variable[]) {
-            //Trim Whitespace
-            $variables = array_map('trim', $variable[$counter]);
-
-            if (!empty($variable[$counter]['field'])) {
-               array_push($validation, true);
-            } else {
-               array_push($validation, false);
-            }
-            $counter++;
+        foreach ($variables as $variable) {
+            if (empty($variable['field'])) {
+               return false;
+            } 
         }
 
-        //Check if any values were empty
-        if (!in_array(false, $validation)) {
-            return true;
-        } else {
-            return false;
-        }
+        //Return true if no empty values
+        return true;
     }
 
     /**
@@ -38,29 +24,16 @@ class Validaro {
      * @return bool True if all fields match their max length, false if not
      */
     public static function checkMaxLength ($variables) {
-        //Variables
-        $counter = 0;
-        $validation = array();
-
         //Loop through values, return false if one is no equal to max length, true if not
-        foreach ($variables as $variable[]) {
-            //Trim Whitespace
-            $variables = array_map('trim', $variable[$counter]);
+        foreach ($variables as $variable) {
 
-            if (strlen($variable[$counter]['field']) <= $variable[$counter]['maxLength']) {
-                array_push($validation, true);
-            } else {
-                array_push($validation, false);
-            }
-            $counter++;
+            if (strlen($variable['field']) >= $variable['maxLength']) {
+                return false;
+            } 
         }
 
-        //Check if any values had correct max length
-        if (!in_array(false, $validation)) {
-            return true;
-        } else {
-            return false;
-        }
+        //Return true if all values match max length
+        return true;
     }
 
     /**
@@ -69,28 +42,14 @@ class Validaro {
      * @return bool True if all fields match their min length, false if not
      */
     public static function checkMinLength ($variables) {
-        //Variables
-        $counter = 0;
-        $validation = array();
-
         //Loop through values, return false if one is no equal to min length, true if not
-        foreach ($variables as $variable[]) {
-            //Trim Whitespace
-            $variables = array_map('trim', $variable[$counter]);
-
-            if (strlen($variable[$counter]['field']) >= $variable[$counter]['minLength']) {
-                array_push($validation, true);
-            } else {
-                array_push($validation, false);
-            }
-            $counter++;
+        foreach ($variables as $variable) {
+            if (strlen($variable['field']) < $variable['minLength']) {
+                return false;
+            } 
         }
 
-        //Check if any values had correct min length
-        if (!in_array(false, $validation)) {
-            return true;
-        } else {
-            return false;
-        }
+        //Return true if all values match min length
+        return true;
     }
 }

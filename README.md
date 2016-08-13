@@ -5,7 +5,7 @@ Validaro is a simple PHP form validation plugin that allows you to keep cleaner 
 The only file you need is "[Validaro.php](Validaro.php)". Place this file wherever you like in your project and reference it with your method of choice. 
 
 ## Basic Usage
-In order to use any of the functions within Validaro you need to first create an variable array. This array will hold all the values that you wish to validate. This array can be as long as you like.
+In order to use any of the functions within Validaro you need to first create an variable array. This array will hold all the values that you wish to validate. This array can be as long as you like. 
 ```php
 $data = array(
     array(
