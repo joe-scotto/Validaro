@@ -26,7 +26,6 @@ class Validaro {
     public static function checkMaxLength ($variables) {
         //Loop through values, return false if one is no equal to max length, true if not
         foreach ($variables as $variable) {
-
             if (strlen($variable['field']) >= $variable['maxLength']) {
                 return false;
             } 
