@@ -43,7 +43,7 @@ class Validaro {
     public static function checkMinLength ($variables) {
         //Loop through values, return false if one is no equal to min length, true if not
         foreach ($variables as $variable) {
-            if (!empty($variable['maxLength']) && strlen($variable['field']) < $variable['minLength']) {
+            if (!empty($variable['field']) && !empty($variable['maxLength']) && strlen($variable['field']) < $variable['minLength']) {
                 return false;
             } 
         }
