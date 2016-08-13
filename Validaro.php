@@ -9,7 +9,7 @@ class Validaro {
     public static function checkNotEmpty ($variables) {
         //Loop through values, return false if one is empty, true if not
         foreach ($variables as $variable) {
-            if (empty($variable['field'])) {
+            if (empty($variable['field']) && $variable['required'] == true) {
                return false;
             } 
         }
@@ -26,7 +26,7 @@ class Validaro {
     public static function checkMaxLength ($variables) {
         //Loop through values, return false if one is no equal to max length, true if not
         foreach ($variables as $variable) {
-            if (strlen($variable['field']) >= $variable['maxLength']) {
+            if (!empty($variable['maxLength']) && strlen($variable['field']) >= $variable['maxLength']) {
                 return false;
             } 
         }
@@ -43,7 +43,7 @@ class Validaro {
     public static function checkMinLength ($variables) {
         //Loop through values, return false if one is no equal to min length, true if not
         foreach ($variables as $variable) {
-            if (strlen($variable['field']) < $variable['minLength']) {
+            if (!empty($variable['maxLength']) && strlen($variable['field']) < $variable['minLength']) {
                 return false;
             } 
         }

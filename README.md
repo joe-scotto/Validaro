@@ -11,12 +11,14 @@ $data = array(
     array(
         'field' => $_POST['name'],
         'maxLength' => 32,
-        'minLength' => 6
+        'minLength' => 6,
+        'required' => true
     ),
     array (
         'field' => $_POST['email'],
         'maxLength' => 32,
-        'minLength' => 6
+        'minLength' => 6,
+        'required' => true
     )
 )
 ```
@@ -36,7 +38,7 @@ if (Validaro::checkNotEmpty($data)) {
     //Do something
 }
 ```
-Checks that all fields are not empty.
+Checks that all required fields with are not empty.
 ```php 
 Validaro::checkNotEmpty();
 ```
